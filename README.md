@@ -36,4 +36,4 @@ Riset hanya membuka resep. Bangunan memberi fungsi setelah konstruksi selesai. A
 
 ## Pengelolaan
 
-Kode kerja tim berada di `black-zero0032/ai-development-team`, folder `projects/project-x`. Source repo Sites memuat salinan yang dipublikasikan. Sinkronisasi keduanya dilakukan eksplisit per rilis; tidak ada pipeline otomatis atau koneksi Multica yang diaktifkan oleh perubahan ini. Identitas deployment pada `.openai/hosting.json` menunjuk Site yang sudah ada; jangan membuat Site baru untuk pembaruan.
+Kode produk berada di repo privat black-zero0032/project-x dan folder C:/Users/Muhammad Hadi/Development/project-x. HQ berada di black-zero0032/ai-development-team. Source repo Sites memuat salinan yang dipublikasikan. Sinkronisasi keduanya dilakukan eksplisit per rilis; tidak ada pipeline otomatis atau koneksi Multica yang diaktifkan oleh perubahan ini. Identitas deployment pada `.openai/hosting.json` menunjuk Site yang sudah ada; jangan membuat Site baru untuk pembaruan.
