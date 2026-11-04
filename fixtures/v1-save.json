@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "day": 120,
+  "cycle": 1,
+  "pop": 12,
+  "food": 500,
+  "wood": 300,
+  "stone": 300,
+  "coin": 100,
+  "science": 0,
+  "jobs": {
+    "farmer": 5,
+    "logger": 3,
+    "miner": 2,
+    "scholar": 1,
+    "guard": 1
+  },
+  "buildings": {
+    "farm": 2,
+    "lumber": 1,
+    "quarry": 1,
+    "house": 2,
+    "lab": 1,
+    "tower": 1
+  },
+  "queue": [],
+  "known": [
+    "agriculture",
+    "tools",
+    "irrigation",
+    "masonry",
+    "commerce",
+    "defense"
+  ],
+  "applied": [
+    "agriculture",
+    "tools",
+    "irrigation",
+    "masonry",
+    "commerce",
+    "defense"
+  ],
+  "research": null,
+  "progress": 0,
+  "regions": [
+    {
+      "name": "Asteria",
+      "power": 70,
+      "growth": 10
+    },
+    {
+      "name": "Valdora",
+      "power": 90,
+      "growth": 12
+    },
+    {
+      "name": "Nusantara",
+      "power": 55,
+      "growth": 8
+    }
+  ],
+  "logs": [
+    {
+      "day": 1,
+      "text": "Dua belas penduduk memulai sebuah peradaban baru.",
+      "type": "info"
+    }
+  ],
+  "meta": {
+    "points": 0,
+    "perks": {
+      "harvest": 0,
+      "learning": 0,
+      "guard": 0
+    },
+    "memory": [],
+    "cycle": 1
+  },
+  "starve": 0,
+  "dead": false,
+  "totalScience": 0
+}
