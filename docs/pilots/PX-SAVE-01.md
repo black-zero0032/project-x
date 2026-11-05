@@ -1,0 +1,4 @@
+# PX-SAVE-01 · 6 November 2026
+Revisi produk ee38e6ecc5e80682831f334bb0f72fa975113307. Kriteria: simpan menghasilkan JSON, muat melalui konfirmasi mengganti progres sesuai data, progres bertahan setelah reload, cadangan rusak ditolak tanpa merusak permainan.
+
+Hasil Windows: node test-engine.cjs meluluskan 14 skenario. Pada Chrome headless dengan profil sementara dan build dist lokal, tombol Simpan menghasilkan cadangan; salinan sintetis dengan hari 12 berhasil diimpor melalui tombol Muat dan konfirmasi. Isi state di penyimpanan browser cocok dengan cadangan. Reload mempertahankan isinya. Impor versi 99 menampilkan pesan penolakan dan state tetap identik. Cakupan browser: Chrome desktop dan satu format cadangan valid/invalid; alur sentuh Android, browser lain, dan tampilan visual belum dinilai. Tidak ada data pemain asli digunakan.
