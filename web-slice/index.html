@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project X — Benteng Lembah</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="engine.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="mast">
+      <div><small>PROJECT X / PLAYTEST WEB</small><h1>Benteng Lembah</h1></div>
+      <div id="clock" class="clock">Hari 1</div>
+    </header>
+    <section class="hud" aria-label="Ringkasan permukiman">
+      <div><span class="food">◆</span> Pangan <strong id="food">15</strong></div>
+      <div><span class="wood">◆</span> Kayu <strong id="wood">17</strong></div>
+      <div><span class="stone">◆</span> Batu <strong id="stone">8</strong></div>
+      <div><span>♟</span> Warga <strong id="people">8</strong></div>
+    </section>
+    <div class="layout">
+      <div class="field">
+        <div class="map">
+          <canvas id="world" width="432" height="240" aria-label="Peta permukiman. Daftar petak dapat digunakan tanpa mouse."></canvas>
+          <div id="map-label" class="map-label">LEMBAH TIMUR</div>
+        </div>
+        <div class="mapbar">
+          <label>Petak / deposit <select id="target"></select></label>
+          <button id="zoom" aria-pressed="false">Fokus benteng</button>
+        </div>
+        <div class="controls" aria-label="Kecepatan waktu">
+          <button data-speed="0" aria-pressed="true">Ⅱ Jeda</button>
+          <button data-speed="1" aria-pressed="false">▶ 1×</button>
+          <button data-speed="3" aria-pressed="false">» 3×</button>
+          <button id="help" aria-pressed="true">Panduan</button>
+          <button id="restart">Sesi baru</button>
+        </div>
+        <p id="notice" role="status">Alokasikan pengumpul sebelum memulai waktu.</p>
+      </div>
+      <aside>
+        <section id="tutorial" class="panel tutor">
+          <small id="step">LANGKAH 01 / 05</small>
+          <h2 id="lesson">Siapkan regu</h2>
+          <p id="instruction">Mulai dengan menugaskan dua pengumpul pangan.</p>
+        </section>
+        <section class="panel" aria-labelledby="jobs-title">
+          <div class="panel-title"><h2 id="jobs-title">Profesi</h2><span id="idle"></span></div>
+          <div id="roles"></div>
+        </section>
+        <section class="panel" id="inspect" aria-label="Informasi petak"></section>
+      </aside>
+    </div>
+    <footer>Pixel-art orisinal Project X · Simpan otomatis di browser · Waktu berjalan saat tab aktif</footer>
+  </main>
+  <dialog id="menu">
+    <small>PROJECT X / BENTENG LEMBAH</small>
+    <h2 id="menu-title">Pos terakhir di lembah</h2>
+    <p id="menu-text">Atur pekerja, siapkan benteng, dan bertahan sampai fajar ketiga.</p>
+    <div class="controls"><button id="resume">Mulai ekspedisi</button><button id="confirm-new" hidden>Mulai sesi baru</button></div>
+  </dialog>
+</body>
+</html>
