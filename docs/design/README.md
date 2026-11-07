@@ -25,3 +25,5 @@ Diagram merekam desain konseptual. ERD dapat dipakai untuk memodelkan state loka
 | [Komponen UI dan ikon](visual/Komponen%20UI%20dan%20ikon%20sumber%20daya.png) | Bar sumber daya, panel, kartu profesi, indikator progres dan HP, tombol, serta ikon bahan dan alat. |
 
 Lembar visual berstatus referensi evaluasi. Saat masuk tahap produksi, gunakan sprite pilihan dan periksa ukuran, pemisahan sprite, transparansi, sambungan tile, animasi, serta keterbacaan dalam game. Arsip ini tidak mengintegrasikan aset ke prototipe.
+
+[Paket aset statis v0.1](../../assets/project-x-v0.1/README.md) memuat PNG terpisah, manifest, dan pratinjau untuk evaluasi sebelum pembuatan game web.
