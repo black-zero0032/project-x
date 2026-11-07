@@ -6,13 +6,7 @@ Benteng Lembah menguji bagian pembuka [Master GDD 001–044](MASTER_GDD.md). Pem
 
 ## Memainkan
 
-Buka `web-slice/index.html` di browser, atau jalankan dari root repo:
-
-```powershell
-python -m http.server 8080 --bind 127.0.0.1 --directory web-slice
-```
-
-Buka `http://127.0.0.1:8080`. Pilih **Mulai ekspedisi**. Panduan interaktif berada di samping peta. Saran rute pertama:
+Ekstrak seluruh ZIP playtest atau buka checkout repo, lalu buka `web-slice/index.html` di Microsoft Edge. Folder `assets/` perlu tetap berdampingan dengan `web-slice/`. Pilih **Mulai ekspedisi**. Panduan interaktif berada di samping peta. Saran rute pertama:
 
 1. Tugaskan 2 pengumpul pangan, 1 penebang, 1 penambang, 2 penjaga, dan 2 pembangun. Jalankan 1×.
 2. Pilih petak dekat pusat, pesan Kebun, dan amati kiriman bahan serta progres. Setelah selesai, pilih Kebun untuk menugaskan pengumpul pangan.
@@ -41,3 +35,12 @@ Biaya bangunan, laju kerja, kapasitas, damage, panjang hari (84 tick), ukuran re
 - Percobaan pratinjau browser lokal terhenti karena browser tidak dapat mengakses alamat lokal dan kontrol Windows menghentikan navigasi file. Bukti perilaku berasal dari pengujian mesin simulasi. Keterbacaan UI, klik peta, dan persistensi browser masih perlu playtest.
 - Pemeriksaan Multica melalui akses baca-saja gagal pada sesi ini. Implementasi dan pengujian dikerjakan langsung melalui repo produk.
 - Tahap berikutnya adalah playtest Zephyr dan revisi gameplay web. Build desktop menunggu persetujuan Zephyr setelah playtest.
+
+## 8 November 2026 · Build untuk evaluasi Zephyr
+
+Zephyr menyetujui penggunaan Benteng Lembah sebagai fondasi playtest web pertama, integrasi paket visual, dan pengujian alur sampai fajar ketiga atau Game Over. Paket [aset statis v0.1](../assets/project-x-v0.1/README.md) kini dipakai untuk tile rumput dan jalan, vegetasi, bangunan, tembok, reruntuhan, tiga tampilan warga, mutan, potret profesi, ikon sumber daya, dan tombol waktu. Indikator HP dan konstruksi membaca nilai simulasi. Mesin dan format simpan tetap menggunakan versi Benteng Lembah yang sudah ada.
+
+- **Bukti mesin:** `node --test web-slice/test-slice.cjs`, 9/9 lulus.
+- **Bukti build:** ZIP final diekstrak dan dibuka dari berkas lokal di Microsoft Edge. Alokasi pekerja, pengiriman hasil, Kebun, Pos jaga, pemuatan ulang sesi di tengah proyek dalam keadaan jeda, pemilihan lewat klik peta, dan fajar ketiga dengan delapan warga lulus. Perbaikan hingga HP penuh diuji terpisah dari save dengan tembok rusak. Jalur Game Over diuji dari sesi baru dan tick berhenti setelah kalah. Aset termuat dan lebar 390 px tidak memicu gulir horizontal.
+- **Batas:** pengujian browser memakai Edge desktop dan satu lebar layar kecil. Animasi sprite per frame, sambungan tile transisi, serta perilaku di browser atau perangkat lain belum diverifikasi. Save berkas lokal mengikuti browser dan lokasi ekstraksi.
+- **Langkah berikut:** Zephyr memainkan build dan menilai visual serta keseimbangan pembuka. Evaluasi ini memakai ZIP lokal. Publikasi situs mengikuti izin rilis terpisah.

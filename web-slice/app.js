@@ -7,11 +7,21 @@
     food: 'Pangan', wood: 'Kayu', stone: 'Batu', core: 'Pusat peradaban', wall: 'Tembok timur',
     house: 'Hunian', farm: 'Kebun', store: 'Gudang', tower: 'Pos jaga', '': 'Petak kosong'
   };
+  const assetRoot = '../assets/project-x-v0.1/';
   const professions = {
-    food: ['Pengumpul pangan', '#dfab5c'], wood: ['Penebang', '#d28a62'],
-    stone: ['Penambang', '#a7b7b8'], builder: ['Pembangun', '#edce82'],
-    guard: ['Penjaga', '#db7264'], porter: ['Pengangkut', '#82c4ae'], '': ['Cadangan', '#a6a38f']
+    food: ['Pengumpul pangan', 'forager'], wood: ['Penebang', 'woodcutter'],
+    stone: ['Penambang', 'miner'], builder: ['Pembangun', 'builder'],
+    guard: ['Penjaga', 'guard'], porter: ['Pengangkut', 'hauler']
   };
+  const structures = { core: 'hut', house: 'hut', farm: 'garden', store: 'warehouse', tower: 'watchtower' };
+  const sprites = {};
+  const spritePaths = [
+    'tiles/grass', 'tiles/road', 'world/tree-large', 'world/tree-small', 'world/stone',
+    'world/stump', 'world/rubble', 'world/wall-intact', 'world/wall-damaged',
+    'world/hut', 'world/garden', 'world/warehouse', 'world/watchtower',
+    'citizens/idle', 'citizens/carrier', 'citizens/guard', 'threats/mutant'
+  ];
+  let missingArt = false;
   let state = E.create();
   let saved = false;
   let storageAvailable = true;
@@ -46,85 +56,80 @@
     }
   }
 
-  function tree(x, y, variant) {
-    rect(x - 6, y + 3, 13, 3, '#203d34');
-    rect(x - 1, y - 1, 3, 6, '#704b3a');
-    rect(x - 7, y - 7, 14, 9, '#294b3d');
-    rect(x - 5, y - 11, 10, 12, variant ? '#50724a' : '#3e6447');
-    rect(x - 2, y - 13, 5, 6, variant ? '#74864e' : '#577b50');
-    rect(x - 5, y - 6, 4, 3, '#648052');
+  function sprite(name, x, y, width, height, context = ctx) {
+    const image = sprites[name];
+    if (!image) return;
+    const scale = Math.min(width / image.width, height / image.height);
+    const w = Math.max(1, Math.round(image.width * scale));
+    const h = Math.max(1, Math.round(image.height * scale));
+    context.drawImage(image, Math.round(x - w / 2), Math.round(y - h), w, h);
+  }
+
+  function meter(x, y, width, value, max, color) {
+    rect(x, y, width, 3, '#382923');
+    rect(x, y, Math.ceil(width * value / max), 3, color);
   }
 
   const landscape = document.createElement('canvas');
-  landscape.width = 432;
-  landscape.height = 240;
+  landscape.width = canvas.width;
+  landscape.height = canvas.height;
   function paintLandscape() {
     const land = landscape.getContext('2d');
-    for (let y = 0; y < 240; y += 4) {
-      for (let x = 0; x < 432; x += 4) {
+    function terrain(name, fallback) {
+      const image = sprites[name];
+      if (!image) return fallback;
+      const tile = document.createElement('canvas');
+      tile.width = tile.height = 32;
+      const tileContext = tile.getContext('2d');
+      tileContext.imageSmoothingEnabled = false;
+      tileContext.drawImage(image, 0, 0, 32, 32);
+      return land.createPattern(tile, 'repeat');
+    }
+    const grass = terrain('tiles/grass', '#667743');
+    const road = terrain('tiles/road', '#8a7250');
+    land.fillStyle = grass;
+    land.fillRect(0, 0, landscape.width, landscape.height);
+    for (let y = 0; y < landscape.height; y += 2) {
+      const bank = 20 + Math.round(Math.sin(y / 31) * 10);
+      land.fillStyle = '#53684f';
+      land.fillRect(0, y, bank + 4, 2);
+      land.fillStyle = '#2c5356';
+      land.fillRect(0, y, bank, 2);
+    }
+    land.fillStyle = road;
+    land.fillRect(68, 105, 263, 10);
+    land.fillRect(184, 54, 13, 121);
+    land.imageSmoothingEnabled = false;
+    for (let y = 20; y < 253; y += 13) {
+      for (let x = 38; x < landscape.width; x += 14) {
         const roll = random(x, y);
-        const river = 20 + Math.round(Math.sin(y / 31) * 10);
-        const path = Math.abs(y - (107 + Math.round(Math.sin(x / 27) * 6))) < 6 ||
-          (x > 176 && x < 198 && y > 58 && y < 177);
-        const palette = x < river ? ['#254e53', '#29565a', '#2d5e61'] :
-          x < river + 5 ? ['#57766a', '#638272', '#688574'] :
-          path ? ['#737358', '#797859', '#807b5b'] : ['#435d45', '#465f47', '#49634a', '#4d664b'];
-        land.fillStyle = palette[roll % palette.length];
-        land.fillRect(x, y, 4, 4);
-        if (roll > 91 && !path && x > river + 5) {
-          land.fillStyle = '#718258';
-          land.fillRect(x + 1, y + 1, 1, 2);
+        if ((x < 65 || x > 386 || y < 35 || y > 212) && roll > 33) {
+          sprite(roll > 64 ? 'world/tree-large' : 'world/tree-small',
+            x + roll % 5, y, 25, 25, land);
         }
       }
     }
   }
   paintLandscape();
 
-  function building(p, id) {
+  function building(p) {
     const x = p.x * 16, y = p.y * 16;
     if (p.type === 'wall') return;
     if (p.job?.action === 'build' || !p.type) {
-      rect(x - 13, y - 9, 26, 19, p.job ? '#806e4d' : '#415544');
-      ctx.strokeStyle = p.job ? '#e6b473' : '#95a277';
+      rect(x - 13, y - 9, 26, 19, p.job ? '#806e4d' : '#617241');
+      ctx.strokeStyle = p.job ? '#ffc86a' : '#a8b87a';
       ctx.setLineDash([3, 2]);
       ctx.strokeRect(x - 12.5, y - 8.5, 25, 17);
       ctx.setLineDash([]);
-      if (p.job) {
-        rect(x - 10, y - 1, 20, 3, '#aa8759');
-        rect(x - 9, y - 5, 2, 13, '#d4a770');
-        rect(x + 7, y - 5, 2, 13, '#d4a770');
-      }
     } else if (!p.hp) {
-      rect(x - 12, y - 5, 24, 11, '#3e4037');
-      for (let i = 0; i < 7; i++) rect(x - 12 + i * 3, y - random(i, id) % 6, 4, 3, '#8c8271');
+      sprite('world/rubble', x, y + 8, 27, 19);
     } else {
-      rect(x - 15, y + 4, 31, 7, '#293d33');
-      if (p.type === 'farm') {
-        rect(x - 13, y - 9, 26, 18, '#775942');
-        for (let i = -9; i <= 9; i += 6) {
-          rect(x + i, y - 7, 2, 14, '#b3aa62');
-          for (let j = -6; j < 7; j += 4) rect(x + i - 1, y + j, 4, 2, '#c3bd76');
-        }
-      } else {
-        const wide = p.type === 'core' ? 15 : p.type === 'tower' ? 8 : 11;
-        const top = p.type === 'tower' ? 21 : 14;
-        const roof = { core: '#53817a', tower: '#b27351', house: '#b46e4e', store: '#aa9160' }[p.type];
-        rect(x - wide, y - top + 5, wide * 2, top + 3, '#4b4436');
-        rect(x - wide + 2, y - top + 5, wide * 2 - 4, top + 1, '#a88c64');
-        for (let i = 0; i < 4; i++) rect(x - wide - 2 + i, y - top + (3 - i) * 2, (wide + 2 - i) * 2, 3, roof);
-        rect(x - 2, y, 5, 7, '#594636');
-        rect(x - wide + 3, y - 4, 4, 4, '#f0bc69');
-        if (p.type === 'core') rect(x + 6, y - 5, 5, 4, '#e9d297');
-        if (p.type === 'store') {
-          rect(x + 5, y + 1, 7, 6, '#604631');
-          rect(x + 6, y + 2, 5, 3, '#bf995f');
-        }
-      }
-      if (p.hp < p.max) {
-        rect(x - 12, y + 11, 24, 2, '#382923');
-        rect(x - 12, y + 11, Math.ceil(24 * p.hp / p.max), 2, '#d98366');
-      }
+      const size = p.type === 'core' ? 38 : 29;
+      sprite('world/' + structures[p.type], x, y + 8, size, size);
+      if (p.type === 'core') rect(x - 2, y + 3, 5, 3, '#ffd37c');
+      if (p.hp < p.max) meter(x - 12, y + 11, 24, p.hp, p.max, '#d98366');
     }
+    if (p.job) meter(x - 12, y + 15, 24, p.job.done, p.job.work, '#ffcc54');
   }
 
   function draw() {
@@ -134,64 +139,48 @@
     screen.x = zoom ? 73 : 0;
     screen.y = zoom ? 33 : 0;
     ctx.setTransform(screen.scale, 0, 0, screen.scale, -screen.x * screen.scale, -screen.y * screen.scale);
+    ctx.imageSmoothingEnabled = false;
     ctx.drawImage(landscape, 0, 0);
-    for (let y = 10; y < 239; y += 13) {
-      for (let x = 36; x < 432; x += 14) {
-        const roll = random(x, y);
-        if ((x < 67 || x > 367 || y < 35 || y > 193) && roll > 31) tree(x + roll % 5, y, roll > 62);
-      }
-    }
     const wall = state.plots[1];
     if (wall.hp) {
-      const wallColor = wall.hp > 30 ? '#9c9a81' : '#8a7562';
-      for (let x = 114; x <= 304; x += 6) {
-        rect(x, 51, 5, 6, wallColor);
-        rect(x, 173, 5, 7, wallColor);
+      for (let x = 122; x <= 300; x += 16) {
+        sprite('world/wall-intact', x, 54, 17, 10);
+        sprite('world/wall-intact', x, 186, 17, 10);
       }
-      for (let y = 53; y < 175; y += 6) {
-        if (y < 101 || y > 117) rect(113, y, 6, 5, wallColor);
-        rect(304, y, 7, 5, wallColor);
+      for (let y = 63; y < 185; y += 7) {
+        if (y < 104 || y > 122) sprite('world/wall-intact', 113, y, 10, 7);
+        if (y < 102 || y > 124) sprite('world/wall-intact', 304, y, 10, 7);
       }
-      rect(297, 101, 20, 20, '#715845');
-      rect(300, 104, 14, 14, '#a3825d');
-      rect(294, 124, 25, 3, '#513832');
-      rect(294, 124, Math.ceil(25 * wall.hp / wall.max), 3, '#d6ae6b');
+      sprite(wall.hp > 30 ? 'world/wall-intact' : 'world/wall-damaged', 304, 120, 29, 22);
+      meter(292, 123, 24, wall.hp, wall.max, '#df9362');
     } else {
-      for (let i = 0; i < 7; i++) rect(295 + i * 3, 104 + random(i, 1) % 15, 5, 4, '#8a7765');
+      sprite('world/rubble', 304, 120, 27, 19);
     }
+    if (wall.job) meter(292, 127, 24, wall.job.done, wall.job.work, '#ffcc54');
     for (const d of state.deposits) {
       const x = d.x * 16, y = d.y * 16;
-      if (d.kind === 'wood' && d.left) {
-        tree(x - 6, y + 2, true); tree(x + 6, y + 1, false); tree(x, y - 4, true);
+      if (d.kind === 'wood') {
+        sprite(d.left ? 'world/tree-large' : 'world/stump', x, y + 6, 26, 27);
       } else if (d.kind === 'stone' && d.left) {
-        rect(x - 9, y - 4, 18, 9, '#596e6c');
-        rect(x - 6, y - 8, 13, 11, '#9aaea7');
-        rect(x - 4, y - 9, 7, 3, '#cad0b3');
-      } else if (d.kind === 'food' && d.left) {
-        rect(x - 8, y - 5, 16, 11, '#365341');
-        for (let i = -6; i <= 6; i += 3) rect(x + i, y - random(i, d.y) % 5, 2, 3, '#e2a568');
+        sprite('world/stone', x, y + 6, 23, 19);
       } else {
-        rect(x - 6, y - 3, 12, 6, '#655746');
+        rect(x - 8, y - 5, 16, 11, '#4d5e30');
+        if (d.left) {
+          for (let i = -6; i <= 6; i += 3) rect(x + i, y - random(i, d.y) % 5, 2, 3, '#e2a568');
+        }
       }
-      rect(x - 8, y + 8, 16, 2, '#263733');
-      rect(x - 8, y + 8, Math.ceil(16 * d.left / d.max), 2, '#e1b168');
+      meter(x - 8, y + 8, 16, d.left, d.max, '#e1b168');
     }
     state.plots.forEach(building);
     for (const w of [...state.workers].sort((a, b) => a.y - b.y)) {
-      const x = w.x * 16 + (w.id % 3 - 1) * 3;
-      const y = w.y * 16 + w.id % 4;
-      rect(x - 2, y + 2, 6, 2, '#233632');
-      rect(x - 1, y - 6, 4, 3, '#e0b490');
-      rect(x - 2, y - 3, 6, 5, professions[w.role][1]);
-      rect(x - 2, y + 2, 2, 2, '#2d3030');
-      rect(x + 2, y + 2, 2, 2, '#2d3030');
-      if (w.cargo) rect(x + 3, y - 2, 4, 4, professions[w.cargo.g][1]);
+      const x = w.x * 16 + (w.id % 3 - 1) * 5;
+      const y = w.y * 16 + 6 + w.id % 4;
+      const appearance = w.cargo ? 'carrier' : w.role === 'guard' ? 'guard' : 'idle';
+      sprite('citizens/' + appearance, x, y, 16, 17);
     }
     for (const e of state.enemies) {
       const x = e.x * 16 + e.id % 3, y = e.y * 16 + e.id % 4;
-      rect(x - 2, y - 5, 5, 4, '#9eb296');
-      rect(x - 3, y - 1, 7, 5, '#895b61');
-      rect(x + 1, y - 4, 1, 1, '#ed876c');
+      sprite('threats/mutant', x, y + 6, 19, 17);
     }
     if (E.night(state)) {
       rect(0, 0, 432, 240, '#17244975');
@@ -236,7 +225,8 @@
     }
     const p = item;
     let html = `<h2>${labels[p.type]}${p.type ? ` · Lv ${p.level}` : ''}</h2>`;
-    if (p.type) html += `<p>HP ${p.hp}/${p.max}${p.hp === 0 ? ' · reruntuhan' : E.efficiency(p) === 0 ? ' · berhenti' : ''}</p>`;
+    if (p.type) html += `<p>HP ${p.hp}/${p.max}${p.hp === 0 ? ' · reruntuhan' : E.efficiency(p) === 0 ? ' · berhenti' : ''}</p>
+      <progress class="health" aria-label="HP bangunan" value="${p.hp}" max="${p.max}"></progress>`;
     if (p.stock) {
       html += `<p>${E.goods.map(g => `${labels[g]} ${p.stock[g]}/${E.capacity(p, g)}`).join(' · ')}</p>`;
       html += E.goods.map(g => button('destination', `Taruh ${labels[g].toLowerCase()} di sini`, g,
@@ -275,11 +265,12 @@
     const full = E.goods.filter(g => E.count(state, g) && !state.stalled[g] && !E.room(state.plots[state.destinations[g]], g));
     const alert = [state.notice, blocked.length ? `Menunggu deposit baru: ${blocked.join(', ')}.` : '',
       full.length ? `Gudang tujuan penuh atau nonaktif: ${full.map(g => labels[g]).join(', ')}.` : '',
-      storageAvailable ? '' : 'Simpan otomatis tidak tersedia di browser ini.'].filter(Boolean).join(' ');
+      storageAvailable ? '' : 'Simpan otomatis tidak tersedia di browser ini.',
+      missingArt ? 'Sebagian aset peta gagal dimuat. Periksa folder assets.' : ''].filter(Boolean).join(' ');
     if ($('notice').textContent !== alert) $('notice').textContent = alert;
     const idle = E.count(state, '');
     $('idle').textContent = `${idle} cadangan`;
-    replace($('roles'), E.roles.map(r => `<div class="role"><span><i class="chip" style="--role:${professions[r][1]}"></i>${professions[r][0]}</span>
+    replace($('roles'), E.roles.map(r => `<div class="role"><span><img class="portrait" src="${assetRoot}portraits/${professions[r][1]}.png" alt="">${professions[r][0]}</span>
       <button data-role="${r}" data-delta="-1" aria-label="Kurangi ${professions[r][0]}" ${!E.count(state, r) || state.loss ? 'disabled' : ''}>−</button>
       <strong>${E.count(state, r)}</strong>
       <button data-role="${r}" data-delta="1" aria-label="Tambah ${professions[r][0]}" ${!idle || state.loss ? 'disabled' : ''}>+</button></div>`).join(''));
@@ -419,4 +410,14 @@
     if (state.loss) menu('dead');
   }, 540);
   menu(state.loss ? 'dead' : 'start');
+  Promise.allSettled(spritePaths.map(async path => {
+    const image = new Image();
+    image.src = assetRoot + path + '.png';
+    await image.decode();
+    sprites[path] = image;
+  })).then(results => {
+    missingArt = results.some(result => result.status === 'rejected');
+    paintLandscape();
+    render();
+  });
 })();
