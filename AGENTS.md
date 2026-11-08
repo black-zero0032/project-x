@@ -7,3 +7,6 @@ Ikuti panduan BMAD/ECC/spesialis dari repo HQ bila tersedia; jika akses kurang, 
 Publikasi dan biaya baru memerlukan izin yang relevan. Dokumentasi tidak memberi akses runtime otomatis.
 
 Operasional produk tidak wajib melalui HQ. Baca pemetaan pelaksana lokal dan aturan koordinasi dalam docs/TEAM_HANDOFF.md. Gunakan chat lokal produk atau delegasi resmi yang diotorisasi; jangan menyamakan akses GitHub dengan akses runtime. Semua kode tetap di folder kanonis produk, bukan folder administratif chat.
+
+## Jeda CEO — 8 November 2026
+Pengembangan dijeda. Baca status terbaru docs/TEAM_HANDOFF.md; mandat lama tidak cukup untuk resume. Perapian konteks diizinkan, tanpa perubahan fitur atau rilis.

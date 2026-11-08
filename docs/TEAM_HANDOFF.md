@@ -1,4 +1,9 @@
 # Serah-terima Project X
+
+## Status 8 November 2026 — PAUSED
+Zephyr menjeda pengembangan pada chat audit sinkronisasi perusahaan. Tidak melanjutkan fitur, pengujian pengembangan, dispatch, merge atau rilis sampai ada instruksi resume. Perapian catatan ini tidak mengubah kode.
+Baseline terverifikasi: branch gdd/web-rebuild, HEAD 6ecfc7f8ce8d30c6b72e3057307f52c46dd3ff3a, sama dengan remote; main ee38e6e adalah baseline lama. Folder kode tetap C:/Users/Muhammad Hadi/Development/project-x. Metadata chat operasional saat dibaca memiliki cwd D:/00. FOLDER UTAMA/Documents/ChatGPT/game project X; cwd chat bukan lokasi kode kanonis. Catatan 4 November di bawah adalah sejarah, bukan status terbaru.
+
 Zephyr menentukan arah dan persetujuan produk. Amel mengoordinasikan pelaksana serta reviewer.
 Repo produk adalah https://github.com/black-zero0032/project-x.
 Folder Windows adalah C:/Users/Muhammad Hadi/Development/project-x.
