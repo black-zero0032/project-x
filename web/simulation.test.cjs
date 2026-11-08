@@ -6,50 +6,62 @@ function run(state, seconds) {
   for (let t = 0; t < seconds; t += .12) S.advance(state, .12);
 }
 
-test('pengiriman paralel memenuhi biaya tepat satu kali dan save mempertahankan kargo', () => {
-  const state = S.create();
-  for (const role of ['builder', 'builder', 'hauler', 'guard', 'guard']) S.assign(state, role, 1);
-  assert(S.order(state, 'lot0', 'build', 'garden'));
-  assert(S.order(state, 'lot1', 'build', 'cabin'));
-  run(state, 2);
-  assert(state.workers.some(w => w.cargo?.job));
-  const resumed = S.restore(JSON.stringify(state));
-  run(state, 29);
-  run(resumed, 29);
-  assert.deepEqual(resumed, state);
-  assert.equal(S.get(state, 'lot0').type, 'garden');
-  assert.equal(S.get(state, 'lot1').type, 'cabin');
-  assert.equal(S.get(state, 'hall').stock.wood, 1);
-  assert.equal(S.get(state, 'hall').stock.stone, 6);
+test('all 30 square tiles map to one plot and reject occupied or outside placement', () => {
+  const s = S.create();
+  const { x, y, size, columns, rows } = S.grid;
+  const ids = new Set();
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < columns; col++) {
+      const plot = S.plotAt(s, x + col * size + .05, y + row * size + .05);
+      ids.add(plot.id);
+    }
+  }
+  assert.equal(ids.size, 30);
+  assert.equal(S.plotAt(s, x + size * columns, y), null);
+  assert.equal(S.order(s, 'hall', 'build', 'workshop'), false);
+  assert.equal(S.order(s, 'lot0', 'build', 'garden'), false);
 });
 
-test('proyek pengganti tidak menerima kiriman pesanan yang dibatalkan', () => {
-  const state = S.create();
-  S.assign(state, 'builder', 1);
-  S.order(state, 'lot0', 'build', 'garden');
-  run(state, 2);
-  const lot = S.get(state, 'lot0');
-  const cargo = state.workers[0].cargo;
-  assert.equal(cargo.job, lot.job.id);
-  S.cancel(state, lot);
-  assert(S.order(state, 'lot0', 'build', 'cabin'));
-  assert.notEqual(cargo.job, lot.job.id);
-  S.assign(state, 'builder', -1);
-  run(state, 10);
-  assert.equal(lot.job.received.wood, 0);
-  assert.equal(S.get(state, 'hall').stock.wood, 18);
+test('spare citizen delivers and builds workshop; recipe and role unlocks require their level', () => {
+  const s = S.create();
+  for (const role of ['forager', 'logger', 'scavenger', 'guard']) assert(S.assign(s, role, 1));
+  assert.equal(S.assign(s, 'builder', 1), false);
+  assert(S.postGuard(s, 'west', 1));
+  assert(S.order(s, 'lot0', 'build', 'workshop'));
+  for (let i = 0; i < 35 && !s.workers.some(w => w.cargo?.job); i++) S.advance(s, .12);
+  assert(s.workers.some(w => w.cargo?.job));
+  const loaded = S.restore(JSON.stringify(s));
+  run(s, 63);
+  run(loaded, 63);
+  assert.deepEqual(s, loaded);
+  assert.equal(S.get(s, 'lot0').type, 'workshop');
+  assert.equal(s.nights, 1);
+  assert.equal(S.order(s, 'lot0', 'craft', 'saw'), false);
+  assert(S.order(s, 'lot0', 'craft', 'axe'));
+  run(s, 13);
+  assert.equal(s.tools.axe, 1);
+  assert.equal(S.roleLimit(s, 'builder'), 0);
 });
 
-test('penempatan penjaga mendukung fajar dan permainan tanpa penjaga dapat berakhir', () => {
-  const defended = S.create();
-  for (const role of ['guard', 'guard', 'forager', 'forager']) S.assign(defended, role, 1);
-  run(defended, 62);
-  assert.equal(defended.nights, 1);
-  assert.equal(defended.loss, '');
-  const empty = S.create();
-  run(empty, 140);
-  assert(empty.loss);
-  const end = empty.time;
-  run(empty, 5);
-  assert.equal(empty.time, end);
+test('guard reserves can be split, distinct food stocks are consumed, and loss stops time', () => {
+  const s = S.create();
+  assert(S.assign(s, 'guard', 1));
+  assert(S.assign(s, 'guard', 1));
+  assert(S.postGuard(s, 'west', 1));
+  assert(S.postGuard(s, 'east', 1));
+  assert(!S.postGuard(s, 'south', 1));
+  assert(S.assign(s, 'guard', -1));
+  assert.equal(Object.values(s.posts).reduce((a, b) => a + b), 1);
+  const hall = S.get(s, 'hall');
+  hall.level = 2;
+  hall.stock.grain = 4;
+  run(s, 28);
+  assert.equal(hall.stock.grain, 0);
+  assert.equal(hall.stock.food, 4);
+  const doomed = S.create();
+  run(doomed, 210);
+  assert(doomed.loss);
+  const end = doomed.time;
+  run(doomed, 5);
+  assert.equal(doomed.time, end);
 });

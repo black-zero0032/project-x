@@ -96,8 +96,15 @@ small { color: #e8ceb3; }
 }
 .role-summary { justify-content: space-between; margin-bottom: 8px; }
 .role-summary progress { width: min(170px, 23vw); }
-.roles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
+.roles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
 .role-card { text-align: center; padding-top: 6px; background: #65564f; border: 2px solid #3c2d29; border-radius: 4px; }
+.role-card.locked .portrait { filter: brightness(.5); }
+.lock-note { min-height: 33px; padding: 4px; font-size: 11px; background: #4b3d38; }
+.lock-note img { width: 19px; height: 19px; }
+.defense-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
+.wall-crew { display: flex; align-items: center; gap: 4px; }
+.wall-crew button { padding: 4px 7px; }
+.dock button[data-guide] { outline: 2px solid var(--gold); outline-offset: -3px; }
 .role-card h3 { font-size: clamp(10px, 2vw, 14px); text-transform: uppercase; }
 .portrait { display: block; width: 76px; max-width: 80%; height: 64px; object-fit: contain; object-position: center bottom; margin: 4px auto 0; }
 .role-controls { display: grid; grid-template-columns: 1fr .8fr 1fr; align-items: center; background: #9c8374; border-top: 2px solid #3c2d29; padding: 4px; }
@@ -160,6 +167,8 @@ dialog::backdrop { background: #0e1212bb; }
   .portrait { height: 47px; }
   .role-summary { font-size: 11px; padding: 5px; }
   .status-grid { grid-template-columns: 1fr; }
+  .defense-grid { grid-template-columns: 1fr; }
+  .hud-item { min-width: 40px; }
   .recipe { grid-template-columns: minmax(54px, 1fr) auto minmax(60px, 1fr) auto; padding: 5px; gap: 4px; }
   .recipe button { padding: 4px; }
   .title-caption { display: none; }

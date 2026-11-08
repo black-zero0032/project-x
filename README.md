@@ -4,7 +4,7 @@ Playtest web survival-management berdasarkan [Master GDD 001–044](docs/MASTER_
 
 [Arsip desain Project X](docs/design/README.md) memuat diagram dan referensi visual yang disetujui Zephyr.
 
-**Build ulang untuk evaluasi:** buka `web/index.html` di Microsoft Edge. Lihat [panduan dan bukti uji build ulang](docs/WEB_REBUILD.md).
+**Build ulang untuk evaluasi:** buka `web/index.html` di Microsoft Edge. Lihat [panduan dan bukti uji fondasi](docs/WEB_FOUNDATION.md) dan [checkpoint build ulang](docs/WEB_REBUILD.md).
 
 ## Riwayat slice web pertama
 
