@@ -1,0 +1,20 @@
+PROJECT X - BENTENG LEMBAH
+Build desktop Windows x64 | Playtest fondasi
+
+1. Ekstrak seluruh ZIP ke satu folder.
+2. Klik dua kali Project X - Benteng Lembah.exe.
+3. Pilih Mulai ekspedisi.
+
+Pembuka yang bisa dicoba
+- Buka Profesi. Tugaskan satu Pemburu, satu Penebang, satu Pemulung,
+  dan satu Petarung Pisau. Sisakan satu warga untuk konstruksi.
+- Buka Jaga dan tempatkan petarung di Barat.
+- Klik tile kosong di dalam tembok. Pesan Bengkel, lalu jalankan waktu.
+- Setelah Bengkel selesai, buka Alat dan buat Kapak.
+
+Sesi disimpan otomatis. Pilih Lanjutkan saat membuka aplikasi kembali.
+Build ini berjalan offline. Gunakan Windows 10 atau 11 x64 dengan
+Microsoft Edge WebView2 Runtime dan .NET Framework 4.8 atau lebih baru.
+
+Folder game, DLL, dan pemberitahuan lisensi adalah bagian dari paket.
+Untuk dikumpulkan, serahkan ZIP utuh.
