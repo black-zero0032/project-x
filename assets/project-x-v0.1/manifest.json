@@ -1,0 +1,1142 @@
+{
+  "version": "0.1",
+  "assets": {
+    "world/hut": {
+      "file": "world/hut.png",
+      "sizePx": [
+        313,
+        218
+      ],
+      "suggestedDisplayPx": [
+        80,
+        56
+      ],
+      "anchorPx": [
+        187,
+        217
+      ],
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        38,
+        67,
+        351,
+        285
+      ],
+      "sha256": "546f7b167a01f04e03385aec10cdd32fcde76cb378b927d8bb5e0164b4b98195"
+    },
+    "world/warehouse": {
+      "file": "world/warehouse.png",
+      "sizePx": [
+        287,
+        222
+      ],
+      "suggestedDisplayPx": [
+        80,
+        62
+      ],
+      "anchorPx": [
+        241,
+        221
+      ],
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        411,
+        64,
+        698,
+        286
+      ],
+      "sha256": "8e20c45e767825609fefd3c3b6e3229bf07dcbb53666c114db107899c8fd9605"
+    },
+    "world/workshop": {
+      "file": "world/workshop.png",
+      "sizePx": [
+        315,
+        209
+      ],
+      "suggestedDisplayPx": [
+        80,
+        53
+      ],
+      "anchorPx": [
+        170,
+        208
+      ],
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        761,
+        79,
+        1076,
+        288
+      ],
+      "sha256": "5be7608d57aea64b48d23249ff70546ab2abb5a5a1dd19d78975db7c9b6e08bb"
+    },
+    "world/watchtower": {
+      "file": "world/watchtower.png",
+      "sizePx": [
+        175,
+        262
+      ],
+      "suggestedDisplayPx": [
+        48,
+        72
+      ],
+      "anchorPx": [
+        103,
+        261
+      ],
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        1175,
+        33,
+        1350,
+        295
+      ],
+      "sha256": "a8603834bb55c67ddd76ba09aab7d79516f5be5bf9f4182a9c149c38293ce709"
+    },
+    "world/garden": {
+      "file": "world/garden.png",
+      "sizePx": [
+        207,
+        193
+      ],
+      "suggestedDisplayPx": [
+        77,
+        72
+      ],
+      "anchorPx": [
+        103,
+        192
+      ],
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        84,
+        364,
+        291,
+        557
+      ],
+      "sha256": "3ae3e21749b5964f2ef7f43607e7eea1ae081ec5a534d5d0646e172ba29a74fb"
+    },
+    "world/wall-intact": {
+      "file": "world/wall-intact.png",
+      "sizePx": [
+        269,
+        120
+      ],
+      "suggestedDisplayPx": [
+        80,
+        36
+      ],
+      "anchorPx": [
+        135,
+        119
+      ],
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        400,
+        410,
+        669,
+        530
+      ],
+      "sha256": "558262126b253a15765c4b4d50d5e3ec0f7f452b3b120242f7831ae573ad209e"
+    },
+    "world/wall-damaged": {
+      "file": "world/wall-damaged.png",
+      "sizePx": [
+        270,
+        120
+      ],
+      "suggestedDisplayPx": [
+        80,
+        36
+      ],
+      "anchorPx": [
+        136,
+        119
+      ],
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        774,
+        410,
+        1044,
+        530
+      ],
+      "sha256": "dc78bd9230617805edaab7946b6cee0c5fa74e09cea38e573cb94fff5dba8f92"
+    },
+    "world/rubble": {
+      "file": "world/rubble.png",
+      "sizePx": [
+        274,
+        155
+      ],
+      "suggestedDisplayPx": [
+        80,
+        45
+      ],
+      "anchorPx": [
+        137,
+        154
+      ],
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        1125,
+        392,
+        1399,
+        547
+      ],
+      "sha256": "b2613d579f13c7e1f20950d1c34240d4566dc8faf44dd786294e160cc4721ea1"
+    },
+    "world/tree-large": {
+      "file": "world/tree-large.png",
+      "sizePx": [
+        243,
+        250
+      ],
+      "suggestedDisplayPx": [
+        70,
+        72
+      ],
+      "anchorPx": [
+        122,
+        249
+      ],
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        74,
+        592,
+        317,
+        842
+      ],
+      "sha256": "75f4bb6185e4342c8e333c38d9f188342e40cf5f2bd9e1da078b5ae871efc8e8"
+    },
+    "world/tree-small": {
+      "file": "world/tree-small.png",
+      "sizePx": [
+        177,
+        195
+      ],
+      "suggestedDisplayPx": [
+        65,
+        72
+      ],
+      "anchorPx": [
+        84,
+        194
+      ],
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        462,
+        643,
+        639,
+        838
+      ],
+      "sha256": "ce1d0ef320a2b3a887c2162c92e037faae4dea53583c2a5bec123c5a5542438e"
+    },
+    "world/stump": {
+      "file": "world/stump.png",
+      "sizePx": [
+        197,
+        106
+      ],
+      "suggestedDisplayPx": [
+        80,
+        43
+      ],
+      "anchorPx": [
+        99,
+        105
+      ],
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        800,
+        716,
+        997,
+        822
+      ],
+      "sha256": "76a223c1fa671e96c8149c8d67bf0fcb66758db922a241afb5e8518e99a73503"
+    },
+    "world/logs": {
+      "file": "world/logs.png",
+      "sizePx": [
+        187,
+        114
+      ],
+      "suggestedDisplayPx": [
+        80,
+        49
+      ],
+      "anchorPx": [
+        90,
+        113
+      ],
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        1167,
+        690,
+        1354,
+        804
+      ],
+      "sha256": "d37262e77846bb51abce346d489b5f7881441b78e93e74d4ea53e210b55d080a"
+    },
+    "world/stone": {
+      "file": "world/stone.png",
+      "sizePx": [
+        198,
+        138
+      ],
+      "suggestedDisplayPx": [
+        80,
+        56
+      ],
+      "anchorPx": [
+        158,
+        137
+      ],
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        102,
+        906,
+        300,
+        1044
+      ],
+      "sha256": "a75e3e7ae30d6c188edaa1aff9b9d9a7fd5e6b18a83e1634fda4c1ae2599a5c0"
+    },
+    "world/ore": {
+      "file": "world/ore.png",
+      "sizePx": [
+        193,
+        134
+      ],
+      "suggestedDisplayPx": [
+        80,
+        56
+      ],
+      "anchorPx": [
+        88,
+        133
+      ],
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        450,
+        907,
+        643,
+        1041
+      ],
+      "sha256": "e8e6cfba3255043deb3b22ac656ddcab8fc00b95a14dd99874a5471d68fb2461"
+    },
+    "tiles/grass": {
+      "file": "tiles/grass.png",
+      "sizePx": [
+        64,
+        64
+      ],
+      "suggestedDisplayPx": [
+        64,
+        64
+      ],
+      "anchorPx": null,
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        835,
+        905,
+        965,
+        1032
+      ],
+      "sha256": "4b08644be768c6528989f57448e1f0296ea61fd3347c98e84c497e8ba4b27ca0"
+    },
+    "tiles/road": {
+      "file": "tiles/road.png",
+      "sizePx": [
+        64,
+        64
+      ],
+      "suggestedDisplayPx": [
+        64,
+        64
+      ],
+      "anchorPx": null,
+      "source": "Koleksi bangunan dan lingkungan pixel art.png",
+      "sourceBoxPx": [
+        1170,
+        903,
+        1308,
+        1030
+      ],
+      "sha256": "015ce97429711f1f5308f05270f0f0c21db5507cf8c1ddbcaf32b526f901974a"
+    },
+    "citizens/idle": {
+      "file": "citizens/idle.png",
+      "sizePx": [
+        92,
+        158
+      ],
+      "suggestedDisplayPx": [
+        19,
+        32
+      ],
+      "anchorPx": [
+        46,
+        152
+      ],
+      "source": "Potret Warga dan Simbol Ancaman1.png",
+      "sourceBoxPx": [
+        134,
+        37,
+        226,
+        195
+      ],
+      "sha256": "a5dd8a23574c17593a79f84fb48e311952c5aa34ca5f4efe4addd8354bde7dbb"
+    },
+    "citizens/carrier": {
+      "file": "citizens/carrier.png",
+      "sizePx": [
+        114,
+        165
+      ],
+      "suggestedDisplayPx": [
+        22,
+        32
+      ],
+      "anchorPx": [
+        48,
+        159
+      ],
+      "source": "Potret Warga dan Simbol Ancaman1.png",
+      "sourceBoxPx": [
+        367,
+        28,
+        481,
+        193
+      ],
+      "sha256": "d9e0971867ffa0b48d43c8fba33e3a1f045a9082cf62f5fa7013591709aae045"
+    },
+    "citizens/guard": {
+      "file": "citizens/guard.png",
+      "sizePx": [
+        118,
+        174
+      ],
+      "suggestedDisplayPx": [
+        22,
+        32
+      ],
+      "anchorPx": [
+        46,
+        168
+      ],
+      "source": "Potret Warga dan Simbol Ancaman1.png",
+      "sourceBoxPx": [
+        597,
+        15,
+        715,
+        189
+      ],
+      "sha256": "01157eee3a829b9cff3ae34d3bf472ff4ccddc0ad728ea195d9a855f7780d9df"
+    },
+    "portraits/woodcutter": {
+      "file": "portraits/woodcutter.png",
+      "sizePx": [
+        314,
+        303
+      ],
+      "suggestedDisplayPx": [
+        88,
+        85
+      ],
+      "anchorPx": null,
+      "source": "Potret Warga dan Simbol Ancaman.png",
+      "sourceBoxPx": [
+        195,
+        33,
+        509,
+        336
+      ],
+      "sha256": "609d173bbcd1bed986d9f1fb8056816557e6f8e9c22cba6a2c34206e325aeb4b"
+    },
+    "portraits/builder": {
+      "file": "portraits/builder.png",
+      "sizePx": [
+        288,
+        302
+      ],
+      "suggestedDisplayPx": [
+        84,
+        88
+      ],
+      "anchorPx": null,
+      "source": "Potret Warga dan Simbol Ancaman.png",
+      "sourceBoxPx": [
+        611,
+        34,
+        899,
+        336
+      ],
+      "sha256": "67fbf1fb08a2cd4caa1753688be80dd4b7781e97b35a1ff74863eaa618f72da1"
+    },
+    "portraits/guard": {
+      "file": "portraits/guard.png",
+      "sizePx": [
+        329,
+        311
+      ],
+      "suggestedDisplayPx": [
+        88,
+        83
+      ],
+      "anchorPx": null,
+      "source": "Potret Warga dan Simbol Ancaman.png",
+      "sourceBoxPx": [
+        1033,
+        25,
+        1362,
+        336
+      ],
+      "sha256": "6de86327840f2cf8424cb7b9c29e687d576b3378eab7eb43aeb918b53645d5e2"
+    },
+    "portraits/forager": {
+      "file": "portraits/forager.png",
+      "sizePx": [
+        310,
+        314
+      ],
+      "suggestedDisplayPx": [
+        87,
+        88
+      ],
+      "anchorPx": null,
+      "source": "Potret Warga dan Simbol Ancaman.png",
+      "sourceBoxPx": [
+        189,
+        400,
+        499,
+        714
+      ],
+      "sha256": "3da1b44687cf134925a7746351a6040997ff7a50a884053017d84edc465f975b"
+    },
+    "portraits/miner": {
+      "file": "portraits/miner.png",
+      "sizePx": [
+        352,
+        319
+      ],
+      "suggestedDisplayPx": [
+        88,
+        80
+      ],
+      "anchorPx": null,
+      "source": "Potret Warga dan Simbol Ancaman.png",
+      "sourceBoxPx": [
+        603,
+        395,
+        955,
+        714
+      ],
+      "sha256": "6957c0ef358fed60bbcef831a224a910b3c41d04ece3ff43e1c9248e7a6d0fb7"
+    },
+    "portraits/hauler": {
+      "file": "portraits/hauler.png",
+      "sizePx": [
+        356,
+        311
+      ],
+      "suggestedDisplayPx": [
+        88,
+        77
+      ],
+      "anchorPx": null,
+      "source": "Potret Warga dan Simbol Ancaman.png",
+      "sourceBoxPx": [
+        1005,
+        403,
+        1361,
+        714
+      ],
+      "sha256": "211c8b9e7045859a39ebfe38457d2a7e61d39ddcb25a2cf1851f1ff55fb99a98"
+    },
+    "threats/mutant": {
+      "file": "threats/mutant.png",
+      "sizePx": [
+        205,
+        175
+      ],
+      "suggestedDisplayPx": [
+        54,
+        46
+      ],
+      "anchorPx": [
+        83,
+        174
+      ],
+      "source": "Potret Warga dan Simbol Ancaman.png",
+      "sourceBoxPx": [
+        828,
+        794,
+        1033,
+        969
+      ],
+      "sha256": "afe011ecad5777090bdeef3744864ab7a8d6bce02a2dc1ce2f187c6ccf804138"
+    },
+    "threats/mutated-boar": {
+      "file": "threats/mutated-boar.png",
+      "sizePx": [
+        306,
+        184
+      ],
+      "suggestedDisplayPx": [
+        62,
+        37
+      ],
+      "anchorPx": [
+        176,
+        183
+      ],
+      "source": "Potret Warga dan Simbol Ancaman.png",
+      "sourceBoxPx": [
+        1131,
+        786,
+        1437,
+        970
+      ],
+      "sha256": "ac6a1e5ac89f79338a2cf10448dac1f41fe69e0f6bee4245c79f79db57cea763"
+    },
+    "ui/resource-bar": {
+      "file": "ui/resource-bar.png",
+      "sizePx": [
+        1511,
+        141
+      ],
+      "suggestedDisplayPx": [
+        540,
+        50
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        80,
+        27,
+        1591,
+        168
+      ],
+      "sha256": "ff3901d3e6d637cbf9f6349365354a8206509a7062f511c99a2e5284186729e5"
+    },
+    "ui/panel": {
+      "file": "ui/panel.png",
+      "sizePx": [
+        790,
+        357
+      ],
+      "suggestedDisplayPx": [
+        320,
+        145
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        100,
+        192,
+        890,
+        549
+      ],
+      "sha256": "c5bda23b720dd1db7d370ceb95b5bb4edc156999402c4c4a8240f41d7a5e6386"
+    },
+    "ui/profession-card": {
+      "file": "ui/profession-card.png",
+      "sizePx": [
+        623,
+        331
+      ],
+      "suggestedDisplayPx": [
+        250,
+        133
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        945,
+        214,
+        1568,
+        545
+      ],
+      "sha256": "845f432f7680c05c90c614f1bcfd94ecf971a9d255bd79b173376a2878771e08"
+    },
+    "ui/progress-sample": {
+      "file": "ui/progress-sample.png",
+      "sizePx": [
+        437,
+        67
+      ],
+      "suggestedDisplayPx": [
+        160,
+        25
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        39,
+        596,
+        476,
+        663
+      ],
+      "sha256": "2440df3507f6805b19739fc6ac2320c2e0daf559942b3e67ee807fbadcf000be"
+    },
+    "ui/health-sample": {
+      "file": "ui/health-sample.png",
+      "sizePx": [
+        436,
+        67
+      ],
+      "suggestedDisplayPx": [
+        160,
+        25
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        40,
+        675,
+        476,
+        742
+      ],
+      "sha256": "e4e15f0e106ef74361da60d58691371543917349b5c6be2466efb09ddc5c82fa"
+    },
+    "ui/buttons/add": {
+      "file": "ui/buttons/add.png",
+      "sizePx": [
+        103,
+        103
+      ],
+      "suggestedDisplayPx": [
+        42,
+        42
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        506,
+        609,
+        609,
+        712
+      ],
+      "sha256": "6ff9614f6fc621315e21c204187b059e840bd3d4dd6f456dd71a171893a8cb3f"
+    },
+    "ui/buttons/subtract": {
+      "file": "ui/buttons/subtract.png",
+      "sizePx": [
+        102,
+        103
+      ],
+      "suggestedDisplayPx": [
+        42,
+        42
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        620,
+        609,
+        722,
+        712
+      ],
+      "sha256": "b03bd95357ae7c8c21109fc3ad52499278bd71f54bf2336dfd5085f391d58119"
+    },
+    "ui/buttons/play": {
+      "file": "ui/buttons/play.png",
+      "sizePx": [
+        104,
+        103
+      ],
+      "suggestedDisplayPx": [
+        42,
+        42
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        734,
+        609,
+        838,
+        712
+      ],
+      "sha256": "793f65cb969989a2d034de501e30731b996428cecac2cd29ecf5738ed527ba55"
+    },
+    "ui/buttons/pause": {
+      "file": "ui/buttons/pause.png",
+      "sizePx": [
+        102,
+        103
+      ],
+      "suggestedDisplayPx": [
+        42,
+        42
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        849,
+        609,
+        951,
+        712
+      ],
+      "sha256": "f320bb6b2fcb97157b1f2de5b4a102e8bcde9c21b7494ef3c9455eeffab071ca"
+    },
+    "ui/buttons/fast-forward": {
+      "file": "ui/buttons/fast-forward.png",
+      "sizePx": [
+        99,
+        104
+      ],
+      "suggestedDisplayPx": [
+        40,
+        42
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        962,
+        609,
+        1061,
+        713
+      ],
+      "sha256": "3ce49c5777b6cfbaee3f65c5064d516e5077e1c0b5f05a87c9a8e0069482b673"
+    },
+    "ui/buttons/locked": {
+      "file": "ui/buttons/locked.png",
+      "sizePx": [
+        106,
+        104
+      ],
+      "suggestedDisplayPx": [
+        42,
+        41
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        1070,
+        609,
+        1176,
+        713
+      ],
+      "sha256": "322f057940731f62200fb6ef9bb2add89923f30e54d90b858c85a05615cbb4e7"
+    },
+    "ui/buttons/close": {
+      "file": "ui/buttons/close.png",
+      "sizePx": [
+        102,
+        103
+      ],
+      "suggestedDisplayPx": [
+        42,
+        42
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        1187,
+        609,
+        1289,
+        712
+      ],
+      "sha256": "ec76f7f100e97bf68c7274bdc9307d67d6e711450b2d1a6c1fe263176f752d5d"
+    },
+    "ui/buttons/add-normal": {
+      "file": "ui/buttons/add-normal.png",
+      "sizePx": [
+        96,
+        102
+      ],
+      "suggestedDisplayPx": [
+        40,
+        42
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        1333,
+        610,
+        1429,
+        712
+      ],
+      "sha256": "2e9024b8b4805d511c10b9d42391efffbf81a6b6a9d5bcc06707bbd6db42fb34"
+    },
+    "ui/buttons/add-highlighted": {
+      "file": "ui/buttons/add-highlighted.png",
+      "sizePx": [
+        96,
+        101
+      ],
+      "suggestedDisplayPx": [
+        40,
+        42
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        1436,
+        611,
+        1532,
+        712
+      ],
+      "sha256": "6cbb06380ed1e1e8be6a24d5f38735f1f8d3c67c824a3d49aa91a483cf97d53b"
+    },
+    "ui/buttons/add-disabled": {
+      "file": "ui/buttons/add-disabled.png",
+      "sizePx": [
+        96,
+        100
+      ],
+      "suggestedDisplayPx": [
+        40,
+        42
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        1538,
+        611,
+        1634,
+        711
+      ],
+      "sha256": "cba1612b3bc47ba0859251aee5ad3a25ffb870290983d801e827fac26cb46882"
+    },
+    "ui/icons/wood": {
+      "file": "ui/icons/wood.png",
+      "sizePx": [
+        122,
+        110
+      ],
+      "suggestedDisplayPx": [
+        32,
+        29
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        39,
+        796,
+        161,
+        906
+      ],
+      "sha256": "74c378cf3f5dbcae34d1fe64f5e7676116be4dcff1f61c6c46f18303621e990b"
+    },
+    "ui/icons/stone": {
+      "file": "ui/icons/stone.png",
+      "sizePx": [
+        118,
+        98
+      ],
+      "suggestedDisplayPx": [
+        32,
+        27
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        181,
+        805,
+        299,
+        903
+      ],
+      "sha256": "dcf93e62f5fe7df0086027e6e73ebe2addae38886f0022d4bbd194950e162d27"
+    },
+    "ui/icons/ore": {
+      "file": "ui/icons/ore.png",
+      "sizePx": [
+        124,
+        105
+      ],
+      "suggestedDisplayPx": [
+        32,
+        27
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        318,
+        800,
+        442,
+        905
+      ],
+      "sha256": "5cd2eb6bf8abf3744c31536f570059d11f32b228ebbcc33aa36d2afc4ac893c7"
+    },
+    "ui/icons/ingot": {
+      "file": "ui/icons/ingot.png",
+      "sizePx": [
+        114,
+        81
+      ],
+      "suggestedDisplayPx": [
+        32,
+        23
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        464,
+        810,
+        578,
+        891
+      ],
+      "sha256": "a6f74367d163c990bdca3ce6ddda2fac34727aa75a19831e02c324078d2aee17"
+    },
+    "ui/icons/food": {
+      "file": "ui/icons/food.png",
+      "sizePx": [
+        125,
+        110
+      ],
+      "suggestedDisplayPx": [
+        32,
+        28
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        605,
+        796,
+        730,
+        906
+      ],
+      "sha256": "9da27a37d811e2f22018531904f3054bf6130af6aef74714ac93ae7d4ce09f09"
+    },
+    "ui/icons/axe": {
+      "file": "ui/icons/axe.png",
+      "sizePx": [
+        108,
+        106
+      ],
+      "suggestedDisplayPx": [
+        32,
+        31
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        749,
+        796,
+        857,
+        902
+      ],
+      "sha256": "b1de30e244a4537f565f451937ecf89a2e0e634d3536e54ce8ca3a5530858980"
+    },
+    "ui/icons/pickaxe": {
+      "file": "ui/icons/pickaxe.png",
+      "sizePx": [
+        108,
+        112
+      ],
+      "suggestedDisplayPx": [
+        31,
+        32
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        889,
+        795,
+        997,
+        907
+      ],
+      "sha256": "f8f55d28887c93f0ce00ffd4db964233a88487c8f40727e339971956d252b876"
+    },
+    "ui/icons/hammer": {
+      "file": "ui/icons/hammer.png",
+      "sizePx": [
+        111,
+        115
+      ],
+      "suggestedDisplayPx": [
+        31,
+        32
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        1017,
+        791,
+        1128,
+        906
+      ],
+      "sha256": "b6c9880ff7a85b1fea9d35f52bba53bf16bf5b0b5fd95b23c7107810e75d3e28"
+    },
+    "ui/icons/spear": {
+      "file": "ui/icons/spear.png",
+      "sizePx": [
+        107,
+        132
+      ],
+      "suggestedDisplayPx": [
+        26,
+        32
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        1139,
+        783,
+        1246,
+        915
+      ],
+      "sha256": "3d7903d819b2e5541fc884043ecf295d2612e880f029b856fd4d05690bbdc45f"
+    },
+    "ui/icons/citizen": {
+      "file": "ui/icons/citizen.png",
+      "sizePx": [
+        85,
+        100
+      ],
+      "suggestedDisplayPx": [
+        27,
+        32
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        1279,
+        800,
+        1364,
+        900
+      ],
+      "sha256": "66dadc30d7a056dfa3b3ba803b53d188d414aea03f6d2a0951d0d687a04cd21d"
+    },
+    "ui/icons/sun": {
+      "file": "ui/icons/sun.png",
+      "sizePx": [
+        119,
+        117
+      ],
+      "suggestedDisplayPx": [
+        32,
+        31
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        1400,
+        793,
+        1519,
+        910
+      ],
+      "sha256": "8b78333f6d6b01c1cf4d5eeccde529e0558a02dbfeda58591bc665efd18842a2"
+    },
+    "ui/icons/moon": {
+      "file": "ui/icons/moon.png",
+      "sizePx": [
+        90,
+        97
+      ],
+      "suggestedDisplayPx": [
+        30,
+        32
+      ],
+      "anchorPx": null,
+      "source": "Komponen UI dan ikon sumber daya.png",
+      "sourceBoxPx": [
+        1545,
+        803,
+        1635,
+        900
+      ],
+      "sha256": "4ba3b4da83da9b86cbe11eb8b82afede52701b67be9928f982e380e5753a4546"
+    }
+  }
+}
