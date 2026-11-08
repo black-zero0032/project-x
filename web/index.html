@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Project X · Benteng Lembah</title>
+  <link rel="stylesheet" href="screen.css">
+  <script src="simulation.js" defer></script>
+  <script src="map.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main id="game" aria-label="Project X">
+    <canvas id="map" width="960" height="600" aria-label="Peta Benteng Lembah"></canvas>
+    <header id="hud" class="hud" hidden></header>
+    <div id="brief" class="brief" hidden>
+      <div id="forecast" class="plate forecast"></div>
+      <p id="notice" class="plate notice" role="status"></p>
+    </div>
+    <section id="panel" class="window plate" aria-labelledby="panel-title" hidden>
+      <header><h2 id="panel-title"></h2><button id="close-panel" aria-label="Tutup panel">✕</button></header>
+      <div id="panel-content" class="window-body"></div>
+    </section>
+    <nav id="dock" class="dock plate" aria-label="Kontrol permukiman" hidden>
+      <button data-panel="menu" title="Menu sesi" aria-label="Menu sesi"><b class="hamburger"></b><span>Menu</span></button>
+      <button data-panel="status" title="Status"><img alt="" src="../assets/project-x-v0.1/ui/icons/food.png"><span>Status</span></button>
+      <button data-panel="jobs" title="Profesi"><img alt="" src="../assets/project-x-v0.1/ui/icons/citizen.png"><span>Profesi</span></button>
+      <button data-panel="build" title="Bangun"><img alt="" src="../assets/project-x-v0.1/ui/icons/hammer.png"><span>Bangun</span></button>
+      <button data-panel="tools" title="Alat"><img alt="" src="../assets/project-x-v0.1/ui/icons/axe.png"><span>Alat</span></button>
+      <button data-panel="defense" title="Pertahanan"><img alt="" src="../assets/project-x-v0.1/ui/icons/spear.png"><span>Jaga</span></button>
+      <div class="time-controls" aria-label="Waktu simulasi">
+        <button data-speed="0" aria-label="Jeda"><img alt="" src="../assets/project-x-v0.1/ui/buttons/pause.png"></button>
+        <button data-speed="1" aria-label="Kecepatan normal"><img alt="" src="../assets/project-x-v0.1/ui/buttons/play.png"><span>1×</span></button>
+        <button data-speed="3" aria-label="Kecepatan cepat"><img alt="" src="../assets/project-x-v0.1/ui/buttons/fast-forward.png"><span>3×</span></button>
+      </div>
+    </nav>
+    <section id="title-screen" class="title-screen" aria-labelledby="title-name">
+      <div class="title-copy">
+        <p class="tag">PROYEK SURVIVAL PERMUKIMAN</p>
+        <h1 id="title-name">PROJECT<br><em>X</em></h1>
+        <p class="subtitle">BENTENG LEMBAH</p>
+        <div id="title-actions" class="title-actions"></div>
+        <small>PLAYTEST WEB · PROJECT X</small>
+      </div>
+      <div class="title-caption"><span></span> POS PENYINTAS <b>01</b></div>
+    </section>
+    <dialog id="confirm">
+      <h2 id="confirm-title">Mulai sesi baru?</h2>
+      <p id="confirm-text">Sesi tersimpan akan diganti.</p>
+      <div class="actions">
+        <button id="cancel-confirm">Batal</button>
+        <button id="new-game" class="primary">Mulai sesi baru</button>
+      </div>
+    </dialog>
+  </main>
+</body>
+</html>

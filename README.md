@@ -4,6 +4,10 @@ Playtest web survival-management berdasarkan [Master GDD 001–044](docs/MASTER_
 
 [Arsip desain Project X](docs/design/README.md) memuat diagram dan referensi visual yang disetujui Zephyr.
 
+**Build ulang untuk evaluasi:** buka `web/index.html` di Microsoft Edge. Lihat [panduan dan bukti uji build ulang](docs/WEB_REBUILD.md).
+
+## Riwayat slice web pertama
+
 ## Riwayat v0.2
 
 Simulasi manajemen peradaban 2D berbahasa Indonesia. Pemain mengalokasikan penduduk, menjaga sumber daya, meneliti teknologi, membangun fasilitas, dan membuat alat untuk mengembangkan wilayah. Tidak ada progres offline.
